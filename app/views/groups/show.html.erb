@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @group.city %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @group.description %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @group.latitude %>
+</p>
+
+<p>
+  <strong>Products</strong>
+  <% @group.products.each do |product| %>
+    <ul>
+      <li><%= product.name %></li>
+      <li><%= product.user %></li>
+      <li><%= product.price %></li>
+    </ul>
+  <% end %>
+</p>
+
+<p>
+  <strong>Members</strong>
+  <% @group.users.each do |user| %>
+    <ul>
+      <li><%= user %></li>
+    </ul>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

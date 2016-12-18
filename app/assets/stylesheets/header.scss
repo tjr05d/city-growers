@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#user_header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%; 
+  img {
+    border-radius: 50%;
+  }
+}

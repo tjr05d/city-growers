@@ -1,0 +1,41 @@
+<div class="marquee">
+  <div class="user-info">
+    <div class="name">
+      <%= @user %>
+    </div>
+    <div class="email">
+      <%= @user.email %>
+    </div>
+  </div>
+  <%= image_tag @user.avatar.url(:medium) %>
+  <div class="user-info">
+    <div class="city">
+      <%= @user.city %>
+    </div>
+  </div>
+</div>
+
+<div class="group-list">
+  <h3><%= user_possesive %> Groups</h3>
+  <% @user.groups.each do |group| %>
+    <ul>
+      <li><%=link_to(group.name, group)%></li>
+      <li><%= group.city %></li>
+    </ul>
+  <% end %>
+
+  <%= link_to "Join a Group", groups_path if @user == current_user %>
+</div>
+
+<div class="product-list">
+  <h3><%= user_possesive %> Products</h3>
+  <% @user.products.each do |product| %>
+    <ul>
+      <li><%=link_to product.name, user_product_path(@user, product)%></li>
+    </ul>
+  <% end %>
+  <%= link_to "Add a Product", new_user_product_path(@user) if @user == current_user%>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

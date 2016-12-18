@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Grow rate:</strong>
+  <%= @product.grow_rate %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @product.user %>
+</p>
+
+<%= link_to 'Edit', edit_user_product_path(@user, @product) %> |
+<%= link_to 'Back', user_path(@product.user) %>
